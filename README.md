@@ -26,26 +26,18 @@ $ source ./install/setup.bash
 $ ros2 launch walker walker_world.launch.py
 ```
 
-### Launch Files
-```bash
-$ source /opt/ros/humble/setup.bash
-$ cd ~/ros_ws
-$ source ./install/setup.bash
-# Run the publisher in terminal
-$ ros2 launch walker walker_world.launch.py ros2_bag_start:=False
-```
 
 ### ROS2 Bag Functionality
-This package supports recording and playback of ros2 bags. The launch file has been modified to support ros2 bag recording. To record use the `ros2_bag_start` parameter (True/False).
+The launch file has been modified to support ros2 bag recording. To record use the `ros2_bag_start` parameter (True/False).
 
 ```bash
 $ source /opt/ros/humble/setup.bash
 $ cd ~/ros_ws
 $ source ./install/setup.bash
 # Run the launch file in terminal with the ros2_bag_start parameter as true
-$ ros2 launch turtlebot_gazebo walker_world.launch.py ros2_bag_start:=True
+$ ros2 launch walker walker_world.launch.py ros2_bag_start:=True
 ```
-The above ros2 bag is called `walkerbag` and can be found in the workspace directory where the command was run.
+
 To inspect and playback the ros2 bag.
 ```bash
 $ source /opt/ros/humble/setup.bash
@@ -56,20 +48,11 @@ $  ros2 bag info walkerbag
 # Play back the contents of the ros2 bag
 $  ros2 bag play walkerbag
 
-### Buidling Doxygen Documentation
-```bash
-$ cd ~/ros_ws
-#Run the colcon build on the doxygen docs cmake target
-$ colcon build --packages-select turtlebot_gazebo --cmake-target docs
-```
 
 ### Check style guidelines
 ```bash
 #In the package directory
-cd ~/ros_ws/src/turtlebot_gazebo
-
-# Cppcheck
-$ cppcheck --enable=all --std=c++17 --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" ) --check-config > results/cppcheck.txt
+cd ~/ros_ws/src/walker
 
 # cpplint
 $ cpplint --filter=-build/c++11,+build/c++17,-build/namespaces,-build/include_order  src/*.cpp >  results/cpplint.txt
