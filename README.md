@@ -13,7 +13,7 @@ $ mkdir -p ~/ros_ws/src
 # Go to the source directory of your ros2 workspace
 $ cd ~/ros_ws/src
 #Clone the repository
-$ git clone 
+$ git clone https://github.com/Uthappa13/my_gazebo_tutorials.git
 #Go back to the ws directory
 $ cd ~/ros_ws
 # Install rosdep dependencies before building the package
