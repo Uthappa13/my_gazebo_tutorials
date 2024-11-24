@@ -47,7 +47,7 @@ $ source ./install/setup.bash
 $  ros2 bag info walkerbag
 # Play back the contents of the ros2 bag
 $  ros2 bag play walkerbag
-
+```
 
 ### Check style guidelines
 ```bash
