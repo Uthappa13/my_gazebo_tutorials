@@ -8,8 +8,8 @@
  * @copyright Copyright (c) 2024
  *
  */
-#include "walker/turtlebot_walker.hpp"
 
+#include "walker/turtlebot_walker.hpp"
 
 // Walker class definition
 Walker::Walker() : Node("walker") {
@@ -72,7 +72,7 @@ void MovingForward::execute(Walker &context, float min_distance) {
     }
   } else {
     auto msg = geometry_msgs::msg::Twist();
-    // Set the linear velocity 
+    // Set the linear velocity
     msg.linear.x = 0.2;
     context.publisher_->publish(msg);
   }
@@ -107,4 +107,3 @@ int main(int argc, char *argv[]) {
   rclcpp::shutdown();
   return 0;
 }
-
